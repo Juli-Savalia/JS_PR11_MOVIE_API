@@ -1,7 +1,0 @@
-.col-20{
-    max-width: calc(20% - 20px)!important;
-    margin : 10px 10px;
-}
-.card-body{
-    display: flex!important;
-}

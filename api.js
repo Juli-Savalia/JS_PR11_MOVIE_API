@@ -6,29 +6,19 @@ $.ajax({
         let carts = res.carts;
         console.log(carts);
         carts.map((val) => {
-        
-                tbl += `
-                       <div class = "d-flex flex-wrap">
-                            <div class="card w-100 py-3" style="width: 18rem;">
-                                <div class = "d-flex">
-                        `
-                 let cartsproduct = val.products;
+            let cartsproduct = val.products;
 
-                 cartsproduct.map((items)=>{
-                    tbl+=  `
-                                    <div class="col-20 d- row">
-                                    <img src="${items.thumbnail}" class="card-img-top" alt="..." width:50%>
-                                    <div class="card-body">
-                                        <h5 class="card-title">${items.title}</h5>
-                                        <p class="card-text">${val.total}</p>
-                                        <p class="card-text">${val.discountedTotal}</p>
-                                        <a href="#" class="btn btn-primary">Add To Cart</a>
-                                    </div>
-                                    </div>
-                                 </div>
-                            </div>
-                        </div>
-                         `
+            cartsproduct.map((items)=>{
+                tbl += `
+                    <tr>
+                        <td>
+                        <img src="${items.thumbnail}" class="card-img-top" alt="..." width:50%>
+                        </td>
+                        <td>${items.title}</td>
+                        <td>${items.total}</td>
+                        <td>${items.discountedTotal}</td>
+                    </tr>
+                `
                  })
                         
             
